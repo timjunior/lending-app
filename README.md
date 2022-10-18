@@ -1,1 +1,1 @@
-# lending-app
+# Lending UI
