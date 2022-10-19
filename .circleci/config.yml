@@ -16,7 +16,10 @@ jobs:
             - app-
       - run:
           name: Install yarn
-          command: npm install -g yarn
+          command: |
+            npm install -g yarn
+            npm install package-yaml --global
+            npm config set onload-script package-yaml
       - run:
           name: Install dependencies
           command: yarn install
