@@ -55,8 +55,11 @@ jobs:
             then
               aws --region ${AWS_REGION} s3 sync ~/repo/build s3://${AWS_TEST_BUCKET} --delete
             else
-              echo ${CURRENT_BRANCH}
-              echo ${CIRCLE_BRANCH} == "Dev"
+              if [ ${CIRCLE_BRANCH} == "Dev" ]              
+              then
+                echo "true"
+              else
+                echo "false"
               aws --region ${AWS_REGION} s3 sync ~/repo/build s3://${AWS_DEV_BUCKET} --delete
             fi
 
