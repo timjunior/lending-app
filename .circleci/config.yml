@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run:
           name: Show current branch
-          command: echo ${CURRENT_BRANCH}
+          command: echo ${CIRCLE_BRANCH}
       - restore_cache:
           keys:
             - app-{{checksum "package.json" }}
@@ -30,7 +30,9 @@ jobs:
       - checkout
       - run:
           name: Show current branch
-          command: echo ${CURRENT_BRANCH}
+          command: |
+            echo ${CIRCLE_BRANCH}
+            echo ${GIT_BRANCH}
       - run:
           name: Install AWS CLI
           working_directory: /
