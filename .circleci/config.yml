@@ -48,7 +48,7 @@ jobs:
       - run:
           name: Deploy to AWS S3
           command: |
-            if [ "${CIRCLE_BRANCH}"" == "Dev" ]              
+            if [ ${CIRCLE_BRANCH} == "Dev" ]              
                then
                  echo "true"
                else
