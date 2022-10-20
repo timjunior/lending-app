@@ -53,8 +53,11 @@ jobs:
               aws --region ${AWS_REGION} s3 sync ~/repo/build s3://${AWS_PRODUCTION_BUCKET} --delete
             elif [ "${CIRCLE_BRANCH}" == "Test"]
             then
+              echo Test branc called
+              echo ${CIRCLE_BRANCH}
               aws --region ${AWS_REGION} s3 sync ~/repo/build s3://${AWS_TEST_BUCKET} --delete
             else
+              echo ${CIRCLE_BRANCH}
               aws --region ${AWS_REGION} s3 sync ~/repo/build s3://${AWS_DEV_BUCKET} --delete
             fi
 
