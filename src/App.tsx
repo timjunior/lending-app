@@ -1,13 +1,12 @@
 import React from "react";
 import "./App.css";
-import Holidays from "./component/Holidays";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <Holidays />
+      <h2>Lending app...</h2>
     </div>
   );
-}
+};
 
 export default App;
